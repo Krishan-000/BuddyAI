@@ -37,9 +37,11 @@ async def chat(request: ChatRequest):
         }
 
     except Exception as e:
-        return {
-            "reply": f"Error: {str(e)}"
-        }
+        print("Gemini API Error:", e)
+
+    return {
+        "reply": "I'm temporarily unable to connect to my AI service. Please try again shortly."
+    }
 
 
 @app.get("/")
